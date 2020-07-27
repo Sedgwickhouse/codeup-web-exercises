@@ -1,0 +1,58 @@
+#top {
+    text-align: Center;
+}
+
+.fancy-header {
+    color: black; /* single line comment */
+    text-decoration: underline;
+}
+
+.container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: red;
+    background-image: (../img deku.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2 {
+    color: black;
+    text-decoration: underline;
+}
+
+li {
+    list-style: circle;
+}
+
+th {
+    font-weight: bold;
+    text-decoration: underline; color: blue;
+}
+
+body {
+    font-family: "Dancing Script", cursive;
+}
+
+.price table td {
+    padding: 0.5rem;
+}
+
+a:visited {
+    color:brown;
+}
+
+a:hover {
+    color:purple;
+    font-size: 1.2em;
+}
+
+a:active {
+    color:green;
+}

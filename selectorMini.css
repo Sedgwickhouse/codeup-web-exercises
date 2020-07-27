@@ -1,0 +1,21 @@
+.danger-zone {
+    color: red
+}
+
+div: hover {
+    background-color: #00ff00
+}
+
+.right-just {
+    font size: 1.3rem
+    text align:left
+    font family: "Times New Roman"
+}
+
+.p {
+    color: blue;
+}
+
+#override p {
+    color: inherit;
+}

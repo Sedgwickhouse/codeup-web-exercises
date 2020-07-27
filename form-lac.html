@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML Forms</title>
+</head>
+<body>
+<form method="post" action="https://request-inspector.glitch.me">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="enter username here">
+    <br>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="enter password">
+
+    <label for="favorite">Favorite</label>
+    <input Type="password" name="favorite" id="favorite">
+</form>
+
+<form method="GET" action="https://request-inspector.glitch.me">
+    <label for="Zipcode">Zip Code</label>
+    <input Type="text" name="Zip Code" id="Zipcode" placeholder="enter zip code">
+
+    <label for="Street">Street</label>
+    <input Type="text" name="Street" id="Street" placeholder="Add Street name" value="Houston">
+
+    <textarea name="full address">6531 Highland Grass</textarea>
+
+    <label for="Superhero">Who is your favorite superhero?</label>
+    <select name="heros" id="heros">
+
+        <option value="manofsteel">Superman</option>
+        <option value="midoriya">Deku</option>
+        <option value="Doc">Dr. Strange</option>
+        <option value="hedgehog">Sonic</option>
+    </select>
+
+    <label>What is the best brand of cereal?</label>
+
+    <input type="radio" name="Questions" value="a"> A. Froot Loops<br>
+    <input type="radio" name="Questions" value="b"> B. Frosted flakes<br>
+    <input type="radio" name="Questions" value="c"> C. Fruity Pebbles<br>
+    <input type="radio" name="Questions" value="d" checked> D. Pops<br>
+
+    <label for="comment">Comment</label>
+    <input type="text" id="comment" name="comment">
+    <input type="hidden" name="username" Value="Sedgwick">
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+<html>
