@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans&display=swap');
+​
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+​
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c1c1c1;
+}
+​
+.nav-links li {
+    list-style-type: none;
+}
+​
+.nav-item a {
+    display: inline-block;
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+    text-decoration: none;
+    padding: 0 1em;
+}
+​
+.nav-item a:hover {
+    color: blue;
+}
+​
+#logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0;
+}
+​
+​
+​
+    /*TODO: Version 1. Uncomment the .nav-links li:nth-child(5) to see the logo centered using margins.*/
+    /*!*.nav-links li:nth-child(5) {*/
+    /*    margin: 0 auto;*/
+    /*}*!*/
+​
+​
+​
+/*TODO: Version 2. Uncomment the lines below to see logo centered using absolute positioning and calc function*/
+
+.nav-links li:nth-child(6) {
+    margin-left: auto;
+}
+​
+.nav-links li:nth-child(5) {
+    position: absolute;
+    left: calc(50% - 1.5em);
+}
+​
+.nav-item a {
+    padding: 1.5em;
+}
+

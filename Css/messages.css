@@ -1,0 +1,39 @@
+:root {
+    --blue-bg-color: #cddeff;
+    --blue-font-color: #5250a4;
+    --green-bg-color: #cddeff;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 1em;
+    font-family: arial, Ubuntu, sans-serif;
+}
+
+.message {
+    border: 1px solid lightgrey;
+    border-radius: .25em
+    margin: .5em
+    padding: .5em;
+}
+
+.message-info {
+    background-color: var(--green-bg-color);
+    color: var(--blue-font-color);
+}
+
+.message-success {
+    background-color: var(--green-bg-color);
+    color: var(--blue-font-color);
+}
+
+.message-warning {
+    background-color: var(--green-bg-color);
+    color: var(--blue-font-color);
+}
+
+.message-error {
+    background-color: var(--green-bg-color);
+    color: var(--blue-font-color);
+}
