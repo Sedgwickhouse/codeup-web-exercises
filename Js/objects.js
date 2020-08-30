@@ -12,6 +12,19 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+        firstName: "Sedgwick",
+        lastName : "House",
+        sayHello: function() {
+            console.log("Hello from " + person.firstName + " " + person.lastName)
+        }
+        }
+
+        sayHello();
+
+    // console.log(person.firstName)
+    // console.log(person.lastName)
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +34,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -35,12 +51,25 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    var shoppingReport = function(shopper) {
+        var discount = 0
+        if(shopper.amount > 200) {
+            discount = shopper.amount * .12;
+        }
+        var message = shopper.name + " saved ";
+        message += discount + " the total bill was"
+        message += shopper.amount - discount;
+        console.log(message);
+    }
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+         {name: 'George', amount: 320}
+     ];
+        shoppers.forEach(shoppingReport)
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +83,27 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "Harry Potter",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+    }
+        },
+        {
+            title: "clifford",
+            author: {
+                firstName:
+                lastName:
+            }
+        },
+
+        {
+            title
+        },
+    ]
 
     /**
      * TODO:
@@ -80,6 +130,9 @@
      *      ...
      */
 
+    books.forEach(function (book, i ) {
+            console.log(" Book # " +(i+1))
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
