@@ -1,41 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jquery Exercise</title>
+    <title>Test Page</title>
 </head>
-
 <body>
-<h1 class="codeup" id="header">What Are The Cool Things I like?</h1>
-
-<div class ="codeup" id="header">
-    <p class="anime-paragraph" id="AP">Here is a List of the Cool Things I enjoy:</p>
-</div>
-
-<ol id="codeup">
-    <li>My Hero Academia</li>
-    <li>Attack on Titan</li>
-    <li>God of High School</li>
-    <li>Black Clover</li>
-    <li>Full Metal Alchemist</li>
-</ol>
-
+<h1 id="heading1">Hello Codeup</h1>
+<p>Its good to see you!!!</p>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-    (function() {
-      "use strict";
-      $(document).ready(function() {
-          alert("the DOM has finished loading");
-         $("p").css("background-color", "blue");
-          $("h1").css("background-color", "blue");
-          $("li").css("background-color", "blue");
-          alert("h1")
-          $("li,p,h1").css("background-color", "blue");
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('#heading1').click(function() {
+                $(this).css("background-color", "blue");
 
-      });
+            });
+        });
     })();
 
 </script>
