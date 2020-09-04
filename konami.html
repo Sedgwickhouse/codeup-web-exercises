@@ -18,6 +18,7 @@
             typedCode.push(event.keyCode)
             console.log(typedCode)
             if(typedCode.join(",") == theActualCode.join(",")) {
+                $("body").css()
                 alert("COOL!! you now have 30 lives!!")
             }
     });
