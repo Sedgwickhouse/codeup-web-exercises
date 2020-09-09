@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Faq</title>
+    <link rel="stylesheet" href="Css/faq.css">
+</head>
+<body class="bg">
+<style>
+    .bg {
+        /* The image used */
+        background-image: url("IMG/SpringbrookNP.jpg");
+
+        /* Full height */
+        height: 1400px;
+        width: 100%;
+
+        /* Center and scale the image nicely */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<div>
+<h1>Frequently Asked Questions About National Parks:</h1>
+</div>
+
+<button>Show The Hidden Answers</button>
+
+<dl>
+    <dt class="data-tb"><strong>What is the most famous National Park in the world?</strong></dt>
+    <dd class="invisible">The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd><br>
+
+    <dt class="data-tb"><strong>What is the most visited National Park in the world?</strong></dt>
+    <dd class="invisible">Great Smoky Mountains National Park is the most visited national park with more than 9 million guests per year.</dd><br>
+
+    <dt class="data-tb"><strong>Who is the director of the National Park Service?</strong></dt>
+    <dd class="invisible">Margaret Everson, Counselor to the Secretary, is exercising the delegated authority of the Director of the National Park Service.</dd><br>
+
+    <dt class="data-tb"><strong>What government agency oversees the National Park Service?</strong></dt>
+    <dd class="invisible">The National Park Service is a bureau of the Department of the Interior.</dd><br>
+
+    <dt class="data-tb"><strong>How old is the National Park System?</strong></dt>
+    <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd><br>
+
+    <dt class="data-tb"><strong>What is the origin of the National Park Service arrowhead?</strong></dt>
+    <dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd><br>
+
+    <dt class="data-tb"><strong>How many areas are in the National Park System?</strong></dt>
+    <dd class="invisible">The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</dd><br>
+
+    <dt class="data-tb"><strong>What is the smallest national park site?</strong></dt>
+    <dd class="invisible">Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres.</dd><br>
+
+    <dt class="data-tb"><strong>What is the largest national park site?</strong></dt>
+    <dd class="invisible">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd><br>
+
+    <dt class="data-tb"><strong>What is the oldest National park in the world?</strong></dt>
+    <dd class="invisible">Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd><br>
+</dl>
+
+
+<div>
+<h3>White Sands National Monument</h3>
+
+<ul>
+    <li>Bears</li>
+    <li>Wolves</li>
+    <li>Trees</li>
+</ul>
+</div>
+
+<div>
+    <h3>Dry Tortugas National Park, Florida</h3>
+
+    <ul>
+        <li>Bears</li>
+        <li>Wolves</li>
+        <li>Trees</li>
+        <li>Monkeys</li>
+    </ul>
+</div>
+
+<div>
+    <h3>White Sands National Monument</h3>
+
+    <ul>
+        <li>Bears</li>
+        <li>Wolves</li>
+        <li>Trees</li>
+        <li>Monkeys</li>
+    </ul>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function() {
+        $('button').click(function () {
+            $('.invisible').addClass('reveal')
+        });
+
+        $('li').last(function (index) {
+            if (index % 2 !== 0) {
+                $(this).css('font-weight: bold');
+            }
+        });
+        $('h1').click(function () {
+            $(this).css('background-color', 'yellow');
+        });
+
+        $('h3').dblclick(function () {
+            $('li').css('font-size', '30px');
+        });
+        $('li').click(function () {
+            $('li').css('color: blue');
+        });
+
+        var li_color;
+        $('li').hover(
+            function () {
+                li_color = $('li').css('color');
+                $(this).css('color', 'red');
+            },
+            function () {
+                console.log(li_color)
+                $(this).css('color', li_color);
+
+            });
+    })
+
+</script>
+
+
+</body>
+</html>
