@@ -1,0 +1,17 @@
+
+.invisible {
+    visibility: hidden;
+}
+.reveal {
+    visibility: visible;
+    font-size: 25px;
+    color: white;
+}
+
+
+
+.data-tb {
+    color: red;
+    font-size: 40px;
+}
+
