@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <title>Weather Map API</title>
 </head>
-<body id="map-info">
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<body>
+<div id="map-info">
+
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="Js/keys.js"></script>
 
 <script>
-    var apiEndPoint = "http://api.openweathermap.org/data/2.5/forecast"
-    var q = "san antonio"
-    $.get(apiEndPoint,{
-        APPID: OPEN_WEATHER_APPID,
-        q: q,
-        units: "imperial"
-    }).done(function(data){
-        console.log(data)
-        const theMain = data.main;
-        const theCity = data.city;
-        var innerHTML = '';
-        $.each(function(data) {
-            innerHTML += '<h1>' + theCity.name + '</h1>'
-            innerHTML += '<p>' + theMain.temp + '</p>'
-            innerHTML += '<p>' + theMain.feels_like + '</p>'
-            innerHTML += '<p>' + theMain.temp_min + '</p>'
-            innerHTML += '<p>' + theMain.temp_max + '</p>'
-
-            $('#map-info').html(innerHTML);
-
+    $(document).ready(function(){
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: OPEN_WEATHER_APPID,
+            q:     "Atlanta",
+            units: "imperial"
+        }).done(function(data) {
+            console.log(data);
+            for(var i = 0; i < data.list.length; i++){
+                $('#map-info').append(
+                    '<h4>' + 'City Name: ' + data.city.name +'</h4>' +
+                    '<p>' + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
+                    '<p>' + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
+                    '<p>' +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
+                    '<p>' + 'Wind Speed: ' + data.list[i].wind.speed +'</p>' +
+                    '<p>' + 'Pressure: ' + data.list[i].main.pressure  +'</p>' + '<hr>'
+                )
+            }
         })
-
     })
 
-
-
-
+    // const theList = data.list;
+    // const theCity = data.list.city;
+    // $.each(theList, function () {
+    //      var innerHTML = '';
+    // console.log(theMain)
+    //innerHTML += '<h1>' + theCity.name + '</h1>'
+    // innerHTML += '<p>' + theMain['temp'] + '</p>'
+    // innerHTML += '<p>' + theMain.feels_like + '</p>'
+    // innerHTML += '<p>' + theMain.temp_min + '</p>'
+    // innerHTML += '<p>' + theMain.temp_max + '</p>'
+    //
+    // $('#map-info').html(innerHTML);
 </script>
 
 
