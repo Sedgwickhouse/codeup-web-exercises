@@ -30,3 +30,4 @@ switch(iceCreamFlavor) {
         alert(iceCreamFlavor + "is gross, but we are still friends");
         break;
 }
+
