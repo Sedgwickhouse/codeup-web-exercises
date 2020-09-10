@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map API</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="Js/keys.js"></script>
+
+<script>
+    var apiEndPoint = "http://api.openweathermap.org/data/2.5/weather"
+    var q = "san antonio"
+    $.get(apiEndPoint,{
+        APPID: OPEN_WEATHER_APPID,
+        q: q
+    }).done(function(data){
+        console.log(data)
+    })
+
+    function getThings() {
+        $.ajax(apiEndPoint) + OPEN_WEATHER_APPID
+        var innerHTML = '';
+    }
+
+
+</script>
+
+
+</body>
+</html>
