@@ -4,48 +4,99 @@
     <meta charset="UTF-8">
     <title>Weather Map API</title>
 </head>
+
 <body>
-<div id="map-info">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="Css/weather_map.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<div>
 
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="Js/keys.js"></script>
 
+<! -- card 1 -->
+<div class="card" id="map-info" style="width: 18rem;">
+  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<! -- card 2 -->
+<div class="card" id="map-info" style="width: 18rem;">
+  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<! -- card 3 -->
+<div class="card" id="map-info" style="width: 18rem;">
+  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<! -- card 4 -->
+<div class="card" id="map-info" style="width: 18rem;">
+  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<! -- card 5 -->
+<div class="card" id="map-info" style="width: 18rem;">
+  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
-            q:     "Atlanta",
+            q: "Atlanta",
             units: "imperial"
-        }).done(function(data) {
+        }).done(function (data) {
             console.log(data);
-            for(var i = 0; i < data.list.length; i++){
-                $('#map-info').append(
-                    '<h4>' + 'City Name: ' + data.city.name +'</h4>' +
-                    '<p>' + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
-                    '<p>' + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
-                    '<p>' +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
-                    '<p>' + 'Wind Speed: ' + data.list[i].wind.speed +'</p>' +
-                    '<p>' + 'Pressure: ' + data.list[i].main.pressure  +'</p>' + '<hr>'
-                )
+            for (var i = 0; i < data.list.length; i++) {
+                if (data.list[i].dt_txt.includes('00:00:00')) {
+                    $('#map-info').append(
+                        '<h4>' + 'City Name: ' + data.city.name + '</h4>' +
+                        '<p>' + 'Description: ' + data.list[i].weather[0].description + '</p>' +
+                        '<p>' + 'Humidity: ' + data.list[i].main.humidity + '</p>' +
+                        '<p>' + 'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
+                        '<p>' + 'Wind Speed: ' + data.list[i].wind.speed + '</p>' +
+                        '<p>' + 'Pressure: ' + data.list[i].main.pressure + '</p>' + '<hr>'
+                    )
+                }
             }
         })
     })
 
-    // const theList = data.list;
-    // const theCity = data.list.city;
-    // $.each(theList, function () {
-    //      var innerHTML = '';
-    // console.log(theMain)
-    //innerHTML += '<h1>' + theCity.name + '</h1>'
-    // innerHTML += '<p>' + theMain['temp'] + '</p>'
-    // innerHTML += '<p>' + theMain.feels_like + '</p>'
-    // innerHTML += '<p>' + theMain.temp_min + '</p>'
-    // innerHTML += '<p>' + theMain.temp_max + '</p>'
-    //
-    // $('#map-info').html(innerHTML);
+    $('<h4>').html('data.city.name');
+
+
 </script>
+
 
 
 </body>
