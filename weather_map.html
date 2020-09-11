@@ -11,7 +11,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 <div>
+<img id="bg" src="audio/thunderstorm.gif" class="img-fluid" alt="Responsive image">
 
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -29,7 +32,7 @@
 </div>
 
 <! -- card 2 -->
-<div class="card" id="map-info" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -39,7 +42,7 @@
 </div>
 
 <! -- card 3 -->
-<div class="card" id="map-info" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -49,7 +52,7 @@
 </div>
 
 <! -- card 4 -->
-<div class="card" id="map-info" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -59,7 +62,7 @@
 </div>
 
 <! -- card 5 -->
-<div class="card" id="map-info" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -67,6 +70,16 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+</script>
 
 
 <script>

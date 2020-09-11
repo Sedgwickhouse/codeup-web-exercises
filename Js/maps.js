@@ -38,7 +38,7 @@ let bestPlacesToEat = [
     }
     ]
 
-bestPlacesToEat.forEach(function(food) {
+bestPlacesToEat.forEach(function(    {
     var popup = new mapboxg1.Popup()
         .setHTML(food.location);
     new mapboxgl.Marker()
