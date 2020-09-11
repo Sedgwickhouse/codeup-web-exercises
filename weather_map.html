@@ -14,7 +14,7 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 <div>
-<img id="bg" src="audio/thunderstorm.gif" class="img-fluid" alt="Responsive image">
+<img src="audio/thunderstorm.gif" class="img-fluid" alt="Responsive image">
 
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -22,64 +22,52 @@
 <script src="Js/keys.js"></script>
 
 <! -- card 1 -->
-<div class="card" id="map-info" style="width: 18rem;">
-  <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+<<div class="card-deck" id="map-info" style="width: 80rem;">
+  <!--<div class="card-body">
     <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+  </div>-->
 </div>
 
 <! -- card 2 -->
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
+</div>-->
 
 <! -- card 3 -->
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
+</div>-->
 
 <! -- card 4 -->
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
+</div>-->
 
 <! -- card 5 -->
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem;">
   <img src="IMG/deku.jpg" class="card-img-top" alt="dekup">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h4 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
+</div>-->
 
-<script>
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-</script>
 
 
 <script>
@@ -93,19 +81,18 @@
             for (var i = 0; i < data.list.length; i++) {
                 if (data.list[i].dt_txt.includes('00:00:00')) {
                     $('#map-info').append(
-                        '<h4>' + 'City Name: ' + data.city.name + '</h4>' +
+                        '<div class="card"><img src="IMG/deku.jpg" class="card-img-top" alt="dekup"<h4>' + 'City Name: ' + data.city.name + '</h4>' +
                         '<p>' + 'Description: ' + data.list[i].weather[0].description + '</p>' +
                         '<p>' + 'Humidity: ' + data.list[i].main.humidity + '</p>' +
                         '<p>' + 'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
                         '<p>' + 'Wind Speed: ' + data.list[i].wind.speed + '</p>' +
-                        '<p>' + 'Pressure: ' + data.list[i].main.pressure + '</p>' + '<hr>'
+                        '<p>' + 'Pressure: ' + data.list[i].main.pressure + '</p></div>'
                     )
                 }
             }
         })
     })
 
-    $('<h4>').html('data.city.name');
 
 
 </script>
