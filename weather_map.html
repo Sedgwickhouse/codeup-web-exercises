@@ -3,29 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="Css/weather_map.css">
+<!--<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />-->
 </head>
 
 <body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="Css/weather_map.css">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-<div>
-<img src="audio/thunderstorm.gif" class="img-fluid" alt="Responsive image">
-
-</div>
+<script src="Js/keys.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="Js/keys.js"></script>
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--MapBoxThunderstorm.gif-->
+<div>
+<img id="bg" src="audio/thunderstorm.gif" class="img-fluid" alt="Responsive image">
+</div>
+
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+</div>
 
 <! -- card 1 -->
-<<div class="card-deck" id="map-info" style="width: 80rem;">
-  <!--<div class="card-body">
+<div class="card-deck" id="map-info" style="width: 80rem;">
+  <div class="card-body">
     <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>-->
+  </div>
+</div>
+
+<!--MAP-->
+<div id='map' style='width: 700px; height: 700px;'>
+
 </div>
 
 <! -- card 2 -->
@@ -71,7 +85,8 @@
 
 
 <script>
-    $(document).ready(function () {
+
+     $(document).ready(function () {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
             q: "Atlanta",
@@ -81,7 +96,7 @@
             for (var i = 0; i < data.list.length; i++) {
                 if (data.list[i].dt_txt.includes('00:00:00')) {
                     $('#map-info').append(
-                        '<div class="card"><img src="IMG/deku.jpg" class="card-img-top" alt="dekup"<h4>' + 'City Name: ' + data.city.name + '</h4>' +
+                        '<div class="card"><h4><img src="IMG/atlanta.jpg" class="card-img-top" alt="dekup">' +  data.city.name + '</h4>' +
                         '<p>' + 'Description: ' + data.list[i].weather[0].description + '</p>' +
                         '<p>' + 'Humidity: ' + data.list[i].main.humidity + '</p>' +
                         '<p>' + 'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
@@ -95,9 +110,7 @@
 
 
 
+
 </script>
-
-
-
 </body>
 </html>
