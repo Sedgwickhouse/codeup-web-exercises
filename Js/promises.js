@@ -6,7 +6,7 @@ fetch("https://api.github.com/users/Sedgwickhouse/events", {headers: {'Authoriza
 function wait(num) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(num !== isNaN(num)) {
+            if(isNaN(num)) {
                 resolve(num)
             } else {
                 reject("its all jacked up!!")
